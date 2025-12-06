@@ -225,7 +225,7 @@ try:
                     j=bpmcount-j-1
     
                     if int(ms(beat(n["beat"]), bpm[j], bpmoffset[j])) >= bpmoffset[0]:
-                        osu.write(f'{ms(beat(n["beat"])-beat(line[j]["beat"]), bpm[j], bpmoffset[j])},-{100/abs(n["scroll"]) if n["scroll"]!=0 else "1E+308"},{int(line[j].get("sign",4))},1,0,0,0,0\n')
+                        osu.write(f'{ms(beat(n["beat"])-beat(line[j]["beat"]), bpm[j], bpmoffset[j])},-{100/abs(n.get("scroll", 1.0)) if n.get("scroll", 1.0)!=0 else "1E+308"},{int(line[j].get("sign",4))},1,0,0,0,0\n')
     
             osu.write('\n\n[HitObjects]')
     
